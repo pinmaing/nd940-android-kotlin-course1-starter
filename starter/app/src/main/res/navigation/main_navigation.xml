@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_root"
+    app:startDestination="@id/login_destination">
+
+    <fragment
+        android:id="@+id/login_destination"
+        android:name="com.udacity.shoestore.screens.login.LoginFragment"
+        android:label="login_fragment"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_login_destination_to_welcome_destination"
+            app:destination="@id/welcome_destination"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:launchSingleTop="true"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/welcome_destination"
+        android:name="com.udacity.shoestore.screens.welcome.WelcomeFragment"
+        android:label="welcome_fragment"
+        tools:layout="@layout/fragment_welcome">
+        <action
+            android:id="@+id/action_welcome_destination_to_instruction_destination"
+            app:destination="@id/instruction_destination"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/instruction_destination"
+        android:name="com.udacity.shoestore.screens.instruction.InstructionFragment"
+        android:label="instruction_fragment"
+        tools:layout="@layout/fragment_instruction">
+        <action
+            android:id="@+id/action_instruction_destination_to_shoe_list_destination"
+            app:destination="@id/shoe_list_destination"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"  />
+    </fragment>
+
+    <fragment
+        android:id="@+id/shoe_list_destination"
+        android:name="com.udacity.shoestore.screens.shoeList.ShoeListFragment"
+        android:label="shoe_list_fragment"
+        tools:layout="@layout/fragment_shoe_list">
+        <action
+            android:id="@+id/action_shoe_list_destination_to_shoe_detail_destination"
+            app:destination="@id/shoe_detail_destination" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/shoe_detail_destination"
+        android:name="com.udacity.shoestore.screens.shoeDetail.ShoeDetailFragment"
+        android:label="shoe_detail_fragment"
+        tools:layout="@layout/fragment_shoe_detail">
+        <action
+            android:id="@+id/action_shoe_detail_destination_to_shoe_list_destination"
+            app:destination="@id/shoe_list_destination" />
+    </fragment>
+</navigation>
